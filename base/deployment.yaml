@@ -22,7 +22,7 @@ spec:
         ports:
         - containerPort: 80
         env:
-        #@ for envVar in data.values.environment:
+        #@ for envVar in data.values.shared.environment:
         - name: #@ envVar.name
           value: #@ envVar.value
         #@ end
