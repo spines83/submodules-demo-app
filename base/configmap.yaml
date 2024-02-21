@@ -1,0 +1,8 @@
+#@ load("@ytt:data", "data")
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: config
+  namespace: default
+data: #@ data.values.shared.environment

@@ -21,8 +21,6 @@ spec:
         image: #@ data.values.image
         ports:
         - containerPort: 80
-        env:
-        #@ for envVar in data.values.shared.environment:
-        - name: #@ envVar.name
-          value: #@ envVar.value
-        #@ end
+        envFrom:
+        - configMapRef:
+            name: config
